@@ -1,0 +1,513 @@
+{
+    "sourceAPI": {
+      "category": "Banking",
+      "operationId": "TurnoffAutopay",
+      "method": "delete",
+      "path": "/SBIntegration/"
+    },
+    "_id": "5ff41a3eabf38f1390542e39",
+    "adapterId": "1db8ee03-ab24-470d-b482-e2dddd53f220",
+    "apiDefinitionId": "a32a57ce-626a-4851-879b-178b7aff5586",
+    "sourceOperationId": "TurnoffAutopay",
+    "content": [
+      {
+        "endPoint": {
+          "host": "api-gw-uat.fisglobal.com",
+          "port": "",
+          "path": "/api/bill-pay/recurring-auto-pay-services/v1/rules",
+          "protocol": "https",
+          "content-type": "application/json",
+          "method": "get"
+        },
+        "_id": "5ff41a3eabf38f1390542e3a",
+        "name": "rules",
+        "operationId": "getRules",
+        "responseParams": [
+          {
+            "_id": "5ff41a3eabf38f1390542e3b",
+            "title": "id",
+            "type": "number",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ff41a3eabf38f1390542e3c",
+            "title": "type",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ff41a3eabf38f1390542e3d",
+            "title": "payeeId",
+            "type": "number",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ff41a3eabf38f1390542e3e",
+            "title": "autoPayType",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ff41a3eabf38f1390542e3f",
+            "title": "fundingProfileId",
+            "type": "number",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ff41a3eabf38f1390542e40",
+            "title": "usePrimaryFundingProfile",
+            "type": "boolean",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ff41a3eabf38f1390542e41",
+            "title": "timingOption",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ff41a3eabf38f1390542e42",
+            "title": "meta",
+            "type": "object",
+            "properties": [
+              {
+                "_id": "5ff41a3eabf38f1390542e43",
+                "title": "messages",
+                "type": "array"
+              }
+            ]
+          }
+        ],
+        "requestParams": [
+          
+        ],
+        "hostProfiles": [
+          {
+            "authentication": {
+              "type": "none"
+            },
+            "_id": "5ff41a1dabf38f1390542e38",
+            "type": "OpenAPI",
+            "security": [
+              
+            ],
+            "host": "api-gw-uat.fisglobal.com",
+            "url": "https://demo.kore.net/openapi.yaml"
+          }
+        ],
+        "sequenceId": "0",
+        
+        "headerParams": [
+          {
+            "_id": "5ff41ab2abf38f1390542ebf",
+            "title": "contextToken",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "eyJhbGciOiJIUzI1NiJ9.eyJGRV9JRCI6IjI4MzBfYnAiLCJVU0VSX0lEIjoiU3VrcmVldDIyOCIsImNvcnJlbGF0aW"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec0",
+            "title": "fe_id",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "1012_sb"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec1",
+            "title": "locale",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "en_US"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec2",
+            "title": "uuid",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "11"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec3",
+            "title": "application_id",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "Postman"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec4",
+            "title": "source_id",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "CC"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec5",
+            "title": "user_id",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "userId1"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec6",
+            "title": "correlation_id",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "15e4c00a-db31-4279-4c5c-8e22222235d66c"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec7",
+            "title": "environment_id",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "uat"
+          },
+          {
+            "_id": "5ff421bbabf38f139054305d",
+            "required": "true",
+            "title": "Authorization",
+            "value": "Bearer 0e7ad65b-b57a-3dea-ace0-ee49b1dd266f",
+            "description": ""
+          }       
+        ],
+        "schemaId": "e91fe8e9-f665-4485-8f9e-37928b96fde9"
+      },
+      {
+        "endPoint": {
+          "host": "api-gw-uat.fisglobal.com",
+          "port": "",
+          "path": "/api/bill-pay/recurring-auto-pay-services/v1/rules/{ruleId}",
+          "protocol": "https",
+          "content-type": "application/json",
+          "method": "delete"
+        },
+        "_id": "5ff41a99abf38f1390542e62",
+        "name": "rules",
+        "operationId": "deleteRule_1",
+        "responseParams": [
+          {
+            "_id": "5ff41a99abf38f1390542e63",
+            "title": "meta",
+            "type": "object",
+            "properties": [
+              {
+                "_id": "5ff41a99abf38f1390542e64",
+                "title": "messages",
+                "type": "array"
+              }
+            ]
+          }
+        ],
+        "requestParams": [
+          {
+            "_id": "5ff41a99abf38f1390542e65",
+            "title": "ruleId",
+            "required": "true",
+            "type": "integer",
+            "in": "path"
+          }
+        ],
+        "hostProfiles": [
+          {
+            "authentication": {
+              "type": "none"
+            },
+            "_id": "5ff41a1dabf38f1390542e38",
+            "type": "OpenAPI",
+            "security": [
+              
+            ],
+            "host": "api-gw-uat.fisglobal.com",
+            "url": "https://demo.kore.net/openapi.yaml"
+          }
+        ],
+        "sequenceId": "1",
+        "dependsOn": ["getRules"],
+        "headerParams": [
+          {
+            "_id": "5ff41ab2abf38f1390542ebf",
+            "title": "contextToken",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "eyJhbGciOiJIUzI1NiJ9.eyJGRV9JRCI6IjI4MzBfYnAiLCJVU0VSX0lEIjoiU3VrcmVldDIyOCIsImNvcnJlbGF0aW"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec0",
+            "title": "fe_id",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "1012_sb"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec1",
+            "title": "locale",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "en_US"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec2",
+            "title": "uuid",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "11"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec3",
+            "title": "application_id",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "Postman"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec4",
+            "title": "source_id",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "CC"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec5",
+            "title": "user_id",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "userId1"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec6",
+            "title": "correlation_id",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "15e4c00a-db31-4279-4c5c-8e22222235d66c"
+          },
+          {
+            "_id": "5ff41ab2abf38f1390542ec7",
+            "title": "environment_id",
+            "required": "true",
+            "type": "string",
+            "in": "header",
+            "value": "uat"
+          },
+          {
+            "_id": "5ff421bbabf38f139054305d",
+            "required": "true",
+            "title": "Authorization",
+            "value": "Bearer 0e7ad65b-b57a-3dea-ace0-ee49b1dd266f",
+            "description": ""
+          }
+        ]
+      }
+    ],
+    "__v": 0,
+    "mappings": {
+      "sourceAPI": {
+        "category": "Banking",
+        "operationId": "a32a57ce-626a-4851-879b-178b7aff5586",
+        "method": "delete",
+        "path": "/SBIntegration/",
+        "responseParams": [
+          {
+            "_id": "5ff57ea01c951716cc966d62",
+            "value": "targetAPI.getRules.responseParams.id",
+            "key": "message",
+            "targetApiIndex": "1",
+            "type": "directMap"
+          }
+        ],
+        "headerParams": [
+          
+        ]
+      },
+      "_id": "5ff421baabf38f1390543031",
+      "adapterId": "1db8ee03-ab24-470d-b482-e2dddd53f220",
+      "apiDefinitionId": "a32a57ce-626a-4851-879b-178b7aff5586",
+      "mappingId": "9584a197-3fb2-455e-882b-75fc2f66c518",
+      "sourceOperationId": "TurnoffAutopay",
+      "targetAPI": [
+        {
+          "_id": "5ff57ea01c951716cc966d63",
+          "schemaId": "e91fe8e9-f665-4485-8f9e-37928b96fde9",
+          "operationId": "getRules",
+          "path": "",
+          "headerParams": [
+            {
+              "_id": "5ff41ab2abf38f1390542ebf",
+              "key": "contextToken",
+              "type": "constant",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJGRV9JRCI6IjI4MzBfYnAiLCJVU0VSX0lEIjoiU3VrcmVldDIyOCIsImNvcnJlbGF0aW"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec0",
+              "key": "fe_id",
+              "type": "constant",
+              "value": "1012_sb"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec1",
+              "key": "locale",
+              "type": "constant",
+              "value": "en_US"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec2",
+              "key": "uuid",
+              "type": "constant",
+              "value": "11"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec3",
+              "key": "application_id",
+              "type": "constant",
+              "value": "Postman"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec4",
+              "key": "source_id",
+              "type": "constant",
+              "value": "CC"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec5",
+              "key": "user_id",
+              "type": "constant",
+              "value": "userId1"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec6",
+              "key": "correlation_id",
+              "type": "constant",
+              "value": "15e4c00a-db31-4279-4c5c-8e22222235d66c"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec7",
+              "key": "environment_id",
+              "type": "constant",
+              "value": "uat"
+            },
+            {
+              "_id": "5ff421bbabf38f139054305d",
+              "key": "Authorization",
+              "type": "constant",
+              "value": "Bearer 0e7ad65b-b57a-3dea-ace0-ee49b1dd266f"
+            }
+          ],
+          "requestParams": [
+            
+          ],
+          "responseParams": [
+            
+          ]
+        },
+        {
+          "_id": "5ff57ea01c951716cc966d6e",
+          "operationId": "deleteRule_1",
+          "path": "",        
+          "headerParams": [
+            {
+              "_id": "5ff41ab2abf38f1390542ebf",
+              "key": "contextToken",
+              "type": "constant",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJGRV9JRCI6IjI4MzBfYnAiLCJVU0VSX0lEIjoiU3VrcmVldDIyOCIsImNvcnJlbGF0aW"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec0",
+              "key": "fe_id",
+              "type": "constant",
+              "value": "1012sb"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec1",
+              "key": "locale",
+              "type": "constant",
+              "value": "en_US"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec2",
+              "key": "uuid",
+              "type": "constant",
+              "value": "2eab99b7-bb1c-f07f-aae6-b49da9a0b04d"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec3",
+              "key": "application_id",
+              "type": "constant",
+              "value": "Postman"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec4",
+              "key": "source_id",
+              "type": "constant",
+              "value": "CC"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec5",
+              "key": "user_id",
+              "type": "constant",
+              "value": "userId1"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec6",
+              "key": "correlation_id",
+              "type": "constant",
+              "value": "15e4c00a-db31-4279-4c5c-8e22222235d66c"
+            },
+            {
+              "_id": "5ff41ab2abf38f1390542ec7",
+              "key": "environment_id",
+              "type": "constant",
+              "value": "uat"
+            },
+            {
+              "_id": "5ff421bbabf38f139054305d",
+              "key": "Authorization",
+              "type": "constant",
+              "value": "Bearer 0e7ad65b-b57a-3dea-ace0-ee49b1dd266f"
+            }
+            
+          ],
+          "requestParams": [
+            {
+              "_id": "5ff57ea01c951716cc966d79",
+              "value": "targetAPI.getRules.responseParams.id",
+              "key": "ruleId",
+              "type": "directMap"
+            }
+          ],
+          "responseParams": [
+            
+          ]
+        }
+      ],
+      "__v": 0
+    }
+  }

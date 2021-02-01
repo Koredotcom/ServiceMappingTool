@@ -1,0 +1,305 @@
+{
+    "sourceAPI": {
+      "category": "Banking",
+      "operationId": "GetCustomers",
+      "method": "post",
+      "path": "/SBIntegration/"
+    },
+    "_id": "5ffc4df96fa3ea01e30f7738",
+    "adapterId": "5c95c75d-8896-4287-a8e7-61612d8d22ec",
+    "apiDefinitionId": "83476339-237c-4399-93ea-991c5a7d850c",
+    "sourceOperationId": "GetCustomers",
+    "content": [
+      {
+        "endPoint": {
+          "host": "api.fusionfabric.cloud",
+          "port": "",
+          "path": "/retail-us/me/v1",
+          "protocol": "https",
+          "content-type": "application/json",
+          "method": "get"
+        },
+        "errorCodes": [
+          
+        ],
+        "_id": "5ffc4df96fa3ea01e30f7739",
+        "name": "consumer",
+        "operationId": "consumer",
+        "responseParams": [
+          {
+            "_id": "5ffc4df96fa3ea01e30f773a",
+            "title": "firstName",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f773b",
+            "title": "lastName",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f773c",
+            "title": "employer",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f773d",
+            "title": "occupation",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f773e",
+            "title": "businessType",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f773f",
+            "title": "addresses",
+            "type": "array",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f7740",
+            "title": "phones",
+            "type": "array",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f7741",
+            "title": "emails",
+            "type": "array",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f7742",
+            "title": "code",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f7743",
+            "title": "message",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f7744",
+            "title": "code",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f7745",
+            "title": "message",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f7746",
+            "title": "code",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f7747",
+            "title": "message",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f7748",
+            "title": "code",
+            "type": "string",
+            "properties": [
+              
+            ]
+          },
+          {
+            "_id": "5ffc4df96fa3ea01e30f7749",
+            "title": "message",
+            "type": "string",
+            "properties": [
+              
+            ]
+          }
+        ],
+        "requestParams": [
+          
+        ],
+        "hostProfiles": [
+          {
+            "authentication": {
+              "type": "none"
+            },
+            "_id": "5ffc49b36fa3ea01e30f7736",
+            "type": "OpenAPI",
+            "security": [
+              
+            ],
+            "host": "api.fusionfabric.cloud",
+            "url": "https://demo.kore.net/banking-swagger1.json"
+          }
+        ],
+        "sequenceId": "0",
+        "dependsOn": [
+          
+        ],
+        "headerParams": [
+          {
+            "_id": "5ffc4e896fa3ea01e30f779a",
+            "title": "X-Request-ID",
+            "type": "string",
+            "in": "header"
+          },
+          {
+            "_id": "5ffc4e896fa3ea01e30f779b",
+            "title": "X-IP-Address",
+            "type": "string",
+            "in": "header"
+          },
+          {
+            "_id": "5ffc4e896fa3ea01e30f779c",
+            "title": "X-User-Agent",
+            "type": "string",
+            "in": "header"
+          },
+          {
+            "_id": "5ffc4e896fa3ea01e30f779d",
+            "title": "X-Device-Type",
+            "type": "string",
+            "in": "header"
+          },
+          {
+            "_id": "5ffc4e896fa3ea01e30f779e",
+            "title": "X-Device-ID",
+            "type": "string",
+            "in": "header"
+          }
+        ],
+        "schemaId": "4e947fbe-2974-4597-a340-9346ecd029e9"
+      }
+    ],
+    "__v": 0,
+    "mappings": {
+      "sourceAPI": {
+        "category": "Banking",
+        "operationId": "83476339-237c-4399-93ea-991c5a7d850c",
+        "method": "post",
+        "path": "/SBIntegration/",
+        "responseParams": [
+          {
+            "_id": "600178eba844255793b1b844",
+            "value": "targetAPI.consumer.responseParams.phones",
+            "key": "phone",
+            "targetApiIndex": "0",
+            "type": "directMap"
+          },
+          {
+            "_id": "600178eba844255793b1b845",
+            "value": "targetAPI.consumer.responseParams.emails",
+            "key": "email",
+            "targetApiIndex": "0",
+            "type": "directMap"
+          },
+          {
+            "_id": "600178eba844255793b1b846",
+            "value": "targetAPI.consumer.responseParams.addresses",
+            "key": "location",
+            "targetApiIndex": "0",
+            "type": "directMap"
+          },
+          {
+            "_id": "600178eba844255793b1b847",
+            "value": "var%20name%20%3D{{targetAPI.consumer.responseParams.firstName}}%2B{{targetAPI.consumer.responseParams.lastName}};return name%3B",
+            "key": "name",
+            "type": "transform"
+          }
+        ],
+        "requestParams": [
+          
+        ],
+        "headerParams": [
+          
+        ]
+      },
+      "_id": "5ffc4e6d6fa3ea01e30f7767",
+      "adapterId": "5c95c75d-8896-4287-a8e7-61612d8d22ec",
+      "apiDefinitionId": "83476339-237c-4399-93ea-991c5a7d850c",
+      "mappingId": "cbaa43fa-daee-47ac-ad56-df2d7f8184dd",
+      "sourceOperationId": "GetCustomers",
+      "targetAPI": [
+        {
+          "_id": "600178eba844255793b1b849",
+          "schemaId": "4e947fbe-2974-4597-a340-9346ecd029e9",
+          "operationId": "consumer",
+          "path": "",
+          "headerParams": [
+            {
+              "_id": "5ffc4e896fa3ea01e30f779a",
+              "key": "X-Request-ID",
+              "type": "constant"
+            },
+            {
+              "_id": "5ffc4e896fa3ea01e30f779b",
+              "key": "X-IP-Address",
+              "type": "constant"
+            },
+            {
+              "_id": "5ffc4e896fa3ea01e30f779c",
+              "key": "X-User-Agent",
+              "type": "constant"
+            },
+            {
+              "_id": "5ffc4e896fa3ea01e30f779d",
+              "key": "X-Device-Type",
+              "type": "constant"
+            },
+            {
+              "_id": "5ffc4e896fa3ea01e30f779e",
+              "key": "X-Device-ID",
+              "type": "constant"
+            }
+          ],
+          "requestParams": [
+            
+          ],
+          "responseParams": [
+            
+          ]
+        }
+      ],
+      "__v": 0
+    }
+  }

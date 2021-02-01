@@ -1,0 +1,27 @@
+{
+  "name": "FISAdapter",
+  "displayName": "FIS adapter",
+  "version": "1.0",
+  "hostProfiles": [{
+      "name": "FIS",
+      "type": "URL",
+      "url": "",
+      "authentication": {
+        "type": "oauth2"
+      },
+      "host": "https://api-gw-uat.fisglobal.com",
+      "security": [{
+          "type": "internal"
+        }]
+    }
+  ],
+  "connectionType": "webservice",
+  "connectionMode": "rest",
+  "variables": [{
+      "title": "organization-id",
+      "in": "header",
+      "value": "",
+      "required": "true",
+      "description": ""
+    }]
+}

@@ -1,0 +1,98 @@
+{
+  "adapterId": "",
+  "apiDefinitionId": "",
+  "sourceOperationId": "DeletePayee",
+  "sourceAPI": {
+    "category": "Banking",
+    "operationId": "DeletePayee",
+    "method": "DELETE",
+    "path": "Payee"
+  },
+  "content": [
+    {
+      "name": "Removes a specific payee.",
+      "operationId": "deletePayee",
+      "sequenceId": "1",
+      "dependsOn": [],
+      "endPoint": {
+        "host": "api-gw-uat.fisglobal.com",
+        "port": "",
+        "path": "/api/bill-pay/payee-services/v1",
+        "protocol": "https",
+        "content-type": "application/json",
+        "method": "delete"
+      },
+      "headerParams": [
+        {
+          "title": "contextToken",
+          "required": "true",
+          "in": "header"
+        },
+        {
+          "title": "fe_id",
+          "required": "true",
+          "in": "header"
+        },
+        {
+          "title": "locale",
+          "required": "true",
+          "in": "header"
+        },
+        {
+          "title": "uuid",
+          "required": "true",
+          "in": "header"
+        },
+        {
+          "title": "application_id",
+          "required": "true",
+          "in": "header"
+        },
+        {
+          "title": "source_id",
+          "required": "true",
+          "in": "header"
+        },
+        {
+          "title": "user_id",
+          "required": "true",
+          "in": "header"
+        },
+        {
+          "title": "correlation_id",
+          "required": "true",
+          "in": "header"
+        },
+        {
+          "title": "environment_id",
+          "required": "true",
+          "in": "header"
+        }
+      ],
+      "requestParams": [
+        {
+          "title": "payeeId",
+          "required": "true",
+          "in": "path"
+        }
+      ],
+      "responseParams": [],
+      "hostProfiles": [
+        {
+          "name": "FIS",
+          "type": "URL",
+          "url": "",
+          "authentication": {
+            "type": "oauth2"
+          },
+          "host": "https://api-gw-uat.fisglobal.com",
+          "security": [
+            {
+              "type": "internal"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

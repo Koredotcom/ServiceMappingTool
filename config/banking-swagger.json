@@ -1,0 +1,1580 @@
+{
+  "info": {
+    "title": "Kore Banking API's",
+    "version": "1.0.0",
+    "description": "kore.ai banking bot apis."
+  },
+  "host": "demodpd.kore.ai",
+  "basePath": "/SBIntegration/",
+  "swagger": "2.0",
+  "tags": [
+    {
+      "name": "Customer",
+      "description": "Customer Information API"
+    },
+    {
+      "name": "Payee",
+      "description": "Biller and Payee API"
+    },
+    {
+      "name": "Transfer",
+      "description": "Fund transfer API"
+    },
+    {
+      "name": "Transactions",
+      "description": "Customer Transactions"
+    }
+  ],
+  "paths": {
+    "/accounts": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "description": "fetch customer account details",
+        "summary": "fetch customer account details",
+        "operationId": "Get Accounts",
+        "parameters": [
+          {
+            "name": "request body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AccountsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/get_account"
+              }
+            }
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer-details": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "description": "fetch customer information",
+        "summary": "fetch customer information",
+        "operationId": "Get Customers",
+        "parameters": [
+          {
+            "name": "request body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CustomerRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/get_customer"
+              }
+            }
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Payee/add": {
+      "post": {
+        "summary": "Add new payee",
+        "tags": [
+          "Payee"
+        ],
+        "operationId": "Add Payee",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddPayeeRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/AddPayeeResponse"
+            }
+          }
+        }
+      }
+    },
+    "/Payee": {
+      "delete": {
+        "tags": [
+          "Payee"
+        ],
+        "operationId": "Delete Payee",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DeletePayeeRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/DeletePayeeResponse"
+            }
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Payee"
+        ],
+        "description": "Fetch payee information",
+        "summary": "Fetch payee information",
+        "operationId": "Get Payees",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetPayeeRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {              
+                "$ref": "#/definitions/PayeeResponse"              
+            }
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Payee/pay-bill": {
+      "post": {
+        "tags": [
+          "Payee"
+        ],
+        "description": "pay payee",
+        "summary": "pay payee",
+        "operationId": "Pay Bill",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "biller form",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/biller_form"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Payee/supported-billers": {
+      "post": {
+        "tags": [
+          "Payee"
+        ],
+        "description": "Fetch merchant/supported billers information",
+        "summary": "Fetch merchant/supported billers information",
+        "operationId": "Get Supported Billers",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MerchantRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/MerchantResponse"
+            }
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Payee/eBill": {
+      "post": {
+        "tags": [
+          "Payee"
+        ],
+        "description": "Enable eBill for Payee",
+        "summary": "Enable eBill for Payee",
+        "operationId": "Enable eBill",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/eBillRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/eBillResponse"
+            }
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Payee"
+        ],
+        "description": "Turnoff eBill for Payee",
+        "summary": "Turnoff eBill for Payee",
+        "operationId": "Turnoff eBill",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/eBillRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/eBillResponse"
+            }
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Payee/autopay": {
+      "post": {
+        "tags": [
+          "Payee"
+        ],
+        "description": "Enable autopay for Payee",
+        "summary": "Enable autopay for Payee",
+        "operationId": "Enable Autopay",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/autopayRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/autopayResponse"
+            }
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Payee"
+        ],
+        "description": "Turnoff autopay for Payee",
+        "summary": "Turnoff autopay for Payee",
+        "operationId": "Turnoff Autopay",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/autopayRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/autopayResponse"
+            }
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Payee/recurring": {
+      "post": {
+        "tags": [
+          "Payee"
+        ],
+        "description": "Setup recurring payment for payee",
+        "summary": "Setup recurring payment for payee",
+        "operationId": "Setup Recurring Payment",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SetupRecurringRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/RecurringResponse"
+            }
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Payee"
+        ],
+        "description": "Deletes recurring payment information for a payee",
+        "summary": "Delete recurring payment for a payee",
+        "operationId": "Delete Recurring Payment",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DeleteRecurringRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/DeleteRecurringResponse"
+              }
+            }
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Payee"
+        ],
+        "description": "Update recurring payment for payee",
+        "summary": "Update recurring payment for payee",
+        "operationId": "Update Recurring Payment",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateRecurringRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/RecurringResponse"
+            }
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Payee/scheduled-payments": {
+      "get": {
+        "tags": [
+          "Payee"
+        ],
+        "description": "View the scheduled payments",
+        "summary": "Get Scheduled Payments",
+        "operationId": "Get Scheduled Payments",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ScheduledPaymentRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete-scheduled-payment/paymentId": {
+      "delete": {
+        "tags": [
+          "Payee"
+        ],
+        "description": "remove payment information",
+        "summary": "remove payment information",
+        "operationId": "Remove Scheduled Payment",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SchedulePayReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "401": {
+            "description": "Error: Authorisation failed.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          },
+          "404": {
+            "description": "Error: Not Found",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/err"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Account/transactions": {
+      "post": {
+        "summary": "Fetches transactions for the specified account",
+        "tags": [
+          "Transactions"
+        ],
+        "operationId": "GetTransactions",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "Transaction Request",
+            "schema": {
+              "$ref": "#/definitions/GetTransactionsReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/GetTransactionsRes"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AccountsRequest": {
+      "example": {
+        "customerId": 1045308
+      },
+      "type": "object",
+      "properties": {
+        "customerId": {
+          "type": "string"
+        }
+      }
+    },
+    "err": {
+      "type": "object",
+      "properties": {
+        "err": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "get_account": {
+      "type": "object",
+      "properties": {
+        "accountName": {
+          "type": "string"
+        },
+        "accountNickname": {
+          "type": "string"
+        },
+        "accountNumber": {
+          "type": "string"
+        },
+        "accountType": {
+          "type": "string"
+        },
+        "activatedDate": {
+          "type": "string"
+        },
+        "availableBalance": {
+          "type": "string"
+        },
+        "availableCredit": {
+          "type": "string"
+        },
+        "cardNumber": {
+          "type": "string"
+        },
+        "creditLimit": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "currentBalance": {
+          "type": "string"
+        },
+        "customerId": {
+          "type": "string"
+        },
+        "deactivatedDate": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "dueAmount": {
+          "type": "string"
+        },
+        "dueDate": {
+          "type": "string"
+        },
+        "expiryDate": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "isPBAvailable": {
+          "type": "string"
+        },
+        "isPersonalBankerAvailable": {
+          "type": "string"
+        },
+        "lastUpdated": {
+          "type": "string"
+        },
+        "minimumPaymentDue": {
+          "type": "string"
+        },
+        "statementDate": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "unbilledAmount": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "CustomerRequest": {
+      "type": "object",
+      "properties": {
+        "customerId": {
+          "type": "string"
+        },
+        "vendor": {
+          "type": "string"
+        }
+      }
+    },
+    "get_customer": {
+      "type": "object",
+      "properties": {
+        "customerId": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "identificationNumber": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "personalBanker": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "contact": {
+              "type": "string"
+            }
+          }
+        },
+        "phone": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "AddPayeeResponse": {
+      "example": {
+        "message": "Payee added successfully"
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "AddPayeeRequest": {
+      "example": {
+        "CustomerId": "userId1",
+        "Name": "WORLD VISION",
+        "Nickname": "WORLD VISION",
+        "AccountNumber": 11111111111,
+        "EmailAddress": "a@gmail.com",
+        "PhoneNumber": 11111111,
+        "PaymentAddress": {
+          "address": "Bill pay dr East",
+          "city": "Cresco",
+          "state": "PA",
+          "zip": 18326,
+          "country": "US"
+        },
+        "StandardBillerID": 12345,
+        "StandardBillerType": "ADDRESS",
+        "Type": "Biller"
+      },
+      "type": "object",
+      "properties": {
+        "CustomerId": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Nickname": {
+          "type": "string"
+        },
+        "AccountNumber": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "type": "string"
+        },
+        "PaymentAddress": {
+          "$ref": "#/definitions/Location"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "vendor": {
+          "type": "string"
+        },
+        "StandardBillerID": {
+          "type": "string"
+        },
+        "StandardBillerType": {
+          "type": "string"
+        },
+        "metaInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MetaInfo"
+          }
+        }
+      },
+      "required": [
+        "CustomerId"
+      ]
+    },
+    "Location": {
+      "title": "Location",
+      "example": {
+        "address": "Bill pay dr East",
+        "city": "Cresco",
+        "state": "PA",
+        "zip": 18326,
+        "country": "US"
+      },
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "address",
+        "city",
+        "state",
+        "zip",
+        "country"
+      ]
+    },
+    "MetaInfo": {
+      "title": "MetaInfo",
+      "example": {
+        "name": "string",
+        "value": "string"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "value"
+      ]
+    },
+    "DeletePayeeResponse": {
+      "example": {
+        "message": "Payee deleted successfully"
+      }
+    },
+    "DeletePayeeRequest": {
+      "type": "object",
+      "properties": {
+        "PayeeId": {
+          "type": "string"
+        },
+        "CustomerId": {
+          "type": "string"
+        }
+      }
+    },
+    "GetPayeeRequest": {
+      "example": {
+        "customerId": 1045308,
+        "type": "Biller"
+      },
+      "type": "object",
+      "properties": {
+        "customerId": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "Biller",
+            "Payee"
+          ]
+        }
+      }
+    },
+    "PayeeResponse": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Payee"
+      }
+    },
+    "Payee": {
+      "type": "object",
+      "properties": {
+        "CustomerId": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Nickname": {
+          "type": "string"
+        },
+        "AccountNumber": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "type": "string"
+        },
+        "PaymentAddress": {
+          "$ref": "#/definitions/Location"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "vendor": {
+          "type": "string"
+        },
+        "StandardBillerID": {
+          "type": "string"
+        },
+        "StandardBillerType": {
+          "type": "string"
+        },
+        "eBill": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "Recurring": {
+          "type": "boolean"
+        },
+        "Scheduled": {
+          "type": "boolean"
+        },
+        "ScheduledDate": {
+          "type": "string"
+        },
+        "metaInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MetaInfo"
+          }
+        }
+      }
+    },
+    "biller_form": {
+      "type": "object",
+      "properties": {
+        "customerId": {
+          "type": "string",
+          "example": "123456"
+        },
+        "amount": {
+          "type": "string",
+          "example": "123456"
+        },
+        "currency": {
+          "type": "string",
+          "example": "USD"
+        },
+        "description": {
+          "type": "string",
+          "example": "VCard Payment"
+        },
+        "sourceAccountId": {
+          "type": "string",
+          "example": "12345"
+        },
+        "date": {
+          "type": "string",
+          "example": "2019-10-18"
+        },
+        "payeeId": {
+          "type": "string",
+          "example": "12"
+        },
+        "payOption": {
+          "example": "check"
+        }
+      }
+    },
+    "MerchantResponse": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Merchant"
+      }
+    },
+    "Merchant": {
+      "type": "object",
+      "properties": {
+        "BillerID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "eBillSupport": {
+          "type": "boolean"
+        },
+        "Category": {
+          "type": "string"
+        }
+      }
+    },
+    "MerchantRequest": {
+      "type": "object",
+      "properties": {
+        "CustomerId": {
+          "type": "string"
+        },
+        "PayeeID": {
+          "type": "string"
+        }
+      }
+    },
+    "eBillResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "eBillRequest": {
+      "type": "object",
+      "properties": {
+        "CustomerId": {
+          "type": "string"
+        },
+        "PayeeID": {
+          "type": "string"
+        }
+      }
+    },
+    "autopayResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "autopayRequest": {
+      "type": "object",
+      "properties": {
+        "CustomerId": {
+          "type": "string"
+        },
+        "PayeeID": {
+          "type": "string"
+        }
+      }
+    },
+    "RecurringResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "SetupRecurringRequest": {
+      "type": "object",
+      "properties": {
+        "CustomerId": {
+          "type": "string"
+        },
+        "PayeeID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "Frequency": {
+          "$ref": "#/definitions/FrequencyReq"
+        },
+        "ScheduledDate": {
+          "type": "string"
+        }
+      }
+    },
+    "FrequencyReq": {
+      "title": "MetaInfo",
+      "example": {
+        "iterate": "string",
+        "duration": "string",
+        "dayOfPayment": "string"
+      },
+      "type": "object",
+      "properties": {
+        "iterate": {
+          "type": "string"
+        },
+        "duration": {
+          "type": "string"
+        },
+        "dayOfPayment": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "iterate",
+        "duration",
+        "dayOfPayment"
+      ]
+    },
+    "DeleteRecurringResponse": {
+      "example": {
+        "message": "Recurring payment has been deleted"
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "DeleteRecurringRequest": {
+      "type": "object",
+      "properties": {
+        "CustomerId": {
+          "type": "string"
+        },
+        "PayeeID": {
+          "type": "string"
+        },
+        "PaymentID": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateRecurringRequest": {
+      "type": "object",
+      "properties": {
+        "CustomerId": {
+          "type": "string"
+        },
+        "PayeeID": {
+          "type": "string"
+        },
+        "PaymentID": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "Frequency": {
+          "$ref": "#/definitions/FreqRequest"
+        },
+        "ScheduledDate": {
+          "type": "string"
+        }
+      }
+    },
+    "FreqRequest": {
+      "title": "MetaInfo",
+      "example": {
+        "iterate": "string",
+        "duration": "string",
+        "dayOfPayment": "string"
+      },
+      "type": "object",
+      "properties": {
+        "iterate": {
+          "type": "string"
+        },
+        "duration": {
+          "type": "string"
+        },
+        "dayOfPayment": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "iterate",
+        "duration",
+        "dayOfPayment"
+      ]
+    },
+    "ScheduledPaymentRequest": {
+      "type": "object",
+      "properties": {
+        "CustomerId": {
+          "type": "string"
+        },
+        "PayeeID": {
+          "type": "string"
+        }
+      }
+    },
+    "SchedulePayReq": {
+      "type": "object",
+      "properties": {
+        "PaymentId": {
+          "type": "string"
+        }
+      }
+    },
+    "GetTransactionsReq": {
+      "example": {
+        "customerId": 1045308,
+        "accountNumber": 1045303,
+        "numOfTransactions": 5
+      },
+      "type": "object",
+      "properties": {
+        "customerId": {
+          "type": "string"
+        },
+        "accountNumber": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/category"
+          }
+        },
+        "numOfTransactions": {
+          "type": "number"
+        },
+        "status": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "transactionAmount": {
+          "$ref": "#/definitions/transactionAmount"
+        },
+        "metaInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MetaInfo"
+          }
+        }
+      }
+    },
+    "transactionAmount": {
+      "title": "transactionAmount",
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number"
+        },
+        "cuurrency": {
+          "type": "string"
+        }
+      }
+    },
+    "GetTransactionsRes": {
+      "example": {
+        "transactionId": 20180629000000000,
+        "accountNumber": 104235,
+        "timestamp": "2018-06-29T00:00:00.000Z",
+        "amount": 111.8,
+        "currency": "USD",
+        "debitOrCredit": "CREDIT",
+        "description": "INTEREST",
+        "status": "posted",
+        "closingBalance": "",
+        "transactionType": 761
+      },
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "Transaction": {
+      "type": "object",
+      "properties": {
+        "customerId": {
+          "type": "string"
+        },
+        "transactionId": {
+          "type": "string"
+        },
+        "accountNumber": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "debitOrCredit": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "closingBalance": {
+          "type": "string"
+        },
+        "transacitonType": {
+          "type": "string"
+        },
+        "ACHCode": {
+          "type": "string"
+        },
+        "MCCCode": {
+          "type": "string"
+        },
+        "SICCode": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "metaInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MetaInfo"
+          }
+        }
+      }
+    },
+    "category": {
+      "title": "category",
+      "type": "object",
+      "properties": {
+        "codeType": {
+          "type": "string",
+          "enum": [
+            "MCC",
+            "SIC",
+            "TransactionType",
+            "ID"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "description": "Value of the field"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "codeType",
+        "value",
+        "source"
+      ]
+    }
+  },
+  "responses": {},
+  "parameters": {},
+  "securityDefinitions": {}
+}

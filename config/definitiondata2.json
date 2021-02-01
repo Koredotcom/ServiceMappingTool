@@ -1,0 +1,363 @@
+{
+  "sourceAPI": {
+      "category": "Banking",
+      "operationId": "GetPayees",
+      "method": "post",
+      "path": "/SBIntegration//Payee"
+  },
+  "_id": "600a73ec09214d7fd8173c8d",
+  "adapterId": "9c2c8dbd-8817-4a2d-8156-8b301f451ea4",
+  "apiDefinitionId": "823c1460-6ce8-4a24-b615-5dcb567e497f",
+  "sourceOperationId": "GetPayees",
+  "content": [
+      {
+          "endPoint": {
+              "host": "api-gw-uat.fisglobal.com",
+              "port": "",
+              "path": "/api/bill-pay/payee-services/v1/payees/",
+              "protocol": "https",
+              "content-type": "application/json",
+              "method": "get"
+          },
+          "dependsOn": [],
+          "errorCodes": [],
+          "_id": "600a73ec09214d7fd8173c8e",
+          "name": "getPayees",
+          "operationId": "getPayees",
+          "responseParams": [
+              {
+                  "_id": "600a73ec09214d7fd8173c8f",
+                  "title": "id",
+                  "type": "number",
+                  "properties": []
+              },
+              {
+                  "_id": "600a73ec09214d7fd8173c90",
+                  "title": "name",
+                  "type": "string",
+                  "properties": []
+              },
+              {
+                  "_id": "600a73ec09214d7fd8173c91",
+                  "title": "nickname",
+                  "type": "string",
+                  "properties": []
+              },
+              {
+                  "_id": "600a73ec09214d7fd8173c92",
+                  "title": "accountNumber",
+                  "type": "string",
+                  "properties": []
+              },
+              {
+                  "_id": "600a73ec09214d7fd8173c93",
+                  "title": "type",
+                  "type": "string",
+                  "properties": []
+              },
+              {
+                  "_id": "600a73ec09214d7fd8173c94",
+                  "title": "deliveryProfiles",
+                  "type": "array",
+                  "properties": []
+              },
+              {
+                  "_id": "600a73ec09214d7fd8173c95",
+                  "title": "deliveryMethods",
+                  "type": "array",
+                  "properties": []
+              },
+              {
+                  "_id": "600a73ec09214d7fd8173c96",
+                  "title": "billStatus",
+                  "type": "string",
+                  "properties": []
+              },
+              {
+                  "_id": "600a73ec09214d7fd8173c97",
+                  "title": "billCycle",
+                  "type": "string",
+                  "properties": []
+              },
+              {
+                  "_id": "600a73ec09214d7fd8173c98",
+                  "title": "meta",
+                  "type": "object",
+                  "properties": [
+                      {
+                          "_id": "600a73ec09214d7fd8173c99",
+                          "title": "messages",
+                          "type": "array"
+                      }
+                  ]
+              }
+          ],
+          "requestParams": [
+              {
+                  "_id": "600a73ec09214d7fd8173c9a",
+                  "title": "$orderby",
+                  "required": "false",
+                  "type": "string",
+                  "in": "query"
+              },
+              {
+                  "_id": "600a73ec09214d7fd8173c9b",
+                  "title": "$expand",
+                  "required": "false",
+                  "type": "string",
+                  "in": "query"
+              },
+              {
+                  "_id": "600a73ec09214d7fd8173c9c",
+                  "title": "$filter",
+                  "required": "false",
+                  "type": "string",
+                  "in": "query"
+              }
+          ],
+          "hostProfiles": [
+              {
+                  "authentication": {
+                      "type": "none"
+                  },
+                  "_id": "600a736809214d7fd8173c8c",
+                  "type": "OpenAPI",
+                  "security": [],
+                  "host": "api-gw-uat.fisglobal.com",
+                  "url": "https://demo.kore.net/PayeeServices.json"
+              }
+          ],
+          "sequenceId": "0",
+          "headerParams": [
+              {
+                  "_id": "600a742509214d7fd8173d6d",
+                  "title": "contextToken",
+                  "required": "true",
+                  "type": "string",
+                  "in": "header",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJGRV9JRCI6IjI4MzBfYnAiLCJVU0VSX0lEIjoiU3VrcmVldDIyOCIsImNvcnJlbGF0aW"
+              },
+              {
+                  "_id": "600a742509214d7fd8173d6e",
+                  "title": "fe_id",
+                  "required": "true",
+                  "type": "string",
+                  "in": "header",
+                  "value": "1012_sb"
+              },
+              {
+                  "_id": "600a742509214d7fd8173d6f",
+                  "title": "locale",
+                  "required": "true",
+                  "type": "string",
+                  "in": "header",
+                  "value": "en_US"
+              },
+              {
+                  "_id": "600a742509214d7fd8173d70",
+                  "title": "uuid",
+                  "required": "true",
+                  "type": "string",
+                  "in": "header",
+                  "value": "ee5ef36a-d582-bd14-2ddc-81415d56c993"
+              },
+              {
+                  "_id": "600a742509214d7fd8173d71",
+                  "title": "application_id",
+                  "required": "true",
+                  "type": "string",
+                  "in": "header",
+                  "value": "Postman"
+              },
+              {
+                  "_id": "600a742509214d7fd8173d72",
+                  "title": "source_id",
+                  "required": "true",
+                  "type": "string",
+                  "in": "header",
+                  "value": "CC"
+              },
+              {
+                  "_id": "600a742509214d7fd8173d73",
+                  "title": "user_id",
+                  "required": "true",
+                  "type": "string",
+                  "in": "header",
+                  "value": "userId1"
+              },
+              {
+                  "_id": "600a742509214d7fd8173d74",
+                  "title": "correlation_id",
+                  "required": "true",
+                  "type": "string",
+                  "in": "header",
+                  "value": "15e4c00a-db31-4279-4c5c-8e22222235d66c"
+              },
+              {
+                  "_id": "600a742509214d7fd8173d75",
+                  "title": "environment_id",
+                  "required": "true",
+                  "type": "string",
+                  "in": "header",
+                  "value": "uat"
+              },
+              {
+                  "_id": "600a742509214d7fd8173d76",
+                  "required": "true",
+                  "title": "Authorization",
+                  "value": "Bearer 0e7ad65b-b57a-3dea-ace0-ee49b1dd266f",
+                  "description": ""
+              }
+          ],
+          "schemaId": "8eaa8a9b-ea66-4b40-a357-fff76fdc0355"
+      }
+  ],
+  "__v": 0,
+  "status": "in development",
+  "mappings": {
+      "sourceAPI": {
+          "category": "Banking",
+          "operationId": "823c1460-6ce8-4a24-b615-5dcb567e497f",
+          "method": "post",
+          "path": "/SBIntegration//Payee",
+          "responseParams": [
+              {
+                  "_id": "600a98fa7755b202be0c36b0",
+                  "value": "targetAPI.getPayees.responseParams.name",
+                  "key": "Name",
+                  "targetApiIndex": "0",
+                  "type": "directMap"
+              },
+              {
+                  "_id": "600a98fa7755b202be0c36b1",
+                  "value": "targetAPI.getPayees.responseParams.nickname",
+                  "key": "Nickname",
+                  "targetApiIndex": "0",
+                  "type": "directMap"
+              },
+              {
+                  "_id": "600a98fa7755b202be0c36b2",
+                  "value": "targetAPI.getPayees.responseParams.accountNumber",
+                  "key": "AccountNumber",
+                  "targetApiIndex": "0",
+                  "type": "directMap"
+              },
+              {
+                  "_id": "600a98fa7755b202be0c36b3",
+                  "value": "Biller",
+                  "key": "Type",
+                  "type": "constant"
+              }
+          ],
+          "requestParams": [],
+          "headerParams": []
+      },
+      "_id": "600a73ed09214d7fd8173ca8",
+      "adapterId": "9c2c8dbd-8817-4a2d-8156-8b301f451ea4",
+      "apiDefinitionId": "823c1460-6ce8-4a24-b615-5dcb567e497f",
+      "mappingId": "ed8167b0-b7a6-4607-92c7-b1beaf555048",
+      "sourceOperationId": "GetPayees",
+      "targetAPI": [
+          {
+              "_id": "600a98fa7755b202be0c36b4",
+              "schemaId": "8eaa8a9b-ea66-4b40-a357-fff76fdc0355",
+              "operationId": "getPayees",
+              "path": "",
+              "headerParams": [
+                  {
+                      "_id": "600a742509214d7fd8173d6d",
+                      "key": "contextToken",
+                      "type": "constant",
+                      "value": "eyJhbGciOiJIUzI1NiJ9.eyJGRV9JRCI6IjI4MzBfYnAiLCJVU0VSX0lEIjoiU3VrcmVldDIyOCIsImNvcnJlbGF0aW"
+                  },
+                  {
+                      "_id": "600a742509214d7fd8173d6e",
+                      "key": "fe_id",
+                      "type": "constant",
+                      "value": "1012_sb"
+                  },
+                  {
+                      "_id": "600a742509214d7fd8173d6f",
+                      "key": "locale",
+                      "type": "constant",
+                      "value": "en_US"
+                  },
+                  {
+                      "_id": "600a742509214d7fd8173d70",
+                      "key": "uuid",
+                      "type": "constant",
+                      "value": "ee5ef36a-d582-bd14-2ddc-81415d56c993"
+                  },
+                  {
+                      "_id": "600a742509214d7fd8173d71",
+                      "key": "application_id",
+                      "type": "constant",
+                      "value": "Postman"
+                  },
+                  {
+                      "_id": "600a742509214d7fd8173d72",
+                      "key": "source_id",
+                      "type": "constant",
+                      "value": "CC"
+                  },
+                  {
+                      "_id": "600a742509214d7fd8173d73",
+                      "key": "user_id",
+                      "type": "constant",
+                      "value": "userId1"
+                  },
+                  {
+                      "_id": "600a742509214d7fd8173d74",
+                      "key": "correlation_id",
+                      "type": "constant",
+                      "value": "15e4c00a-db31-4279-4c5c-8e22222235d66c"
+                  },
+                  {
+                      "_id": "600a742509214d7fd8173d75",
+                      "key": "environment_id",
+                      "type": "constant",
+                      "value": "uat"
+                  },
+                  {
+                      "_id": "600a742509214d7fd8173d76",
+                      "key": "Authorization",
+                      "type": "constant",
+                      "value": "Bearer 0e7ad65b-b57a-3dea-ace0-ee49b1dd266f"
+                  }
+              ],
+              "requestParams": [
+                  {
+                      "_id": "600a98fa7755b202be0c36bf",
+                      "value": "status%20desc",
+                      "key": "$orderby",
+                      "type": "constant"
+                  },
+                  {
+                      "_id": "600a98fa7755b202be0c36c0",
+                      "value": "Biller",
+                      "key": "$orderby",
+                      "type": "constant"
+                  }
+              ],
+              "responseParams": [
+                  {
+                      "_id": "600a98fa7755b202be0c36c1",
+                      "value": "status%20desc",
+                      "key": "$orderby",
+                      "type": "constant"
+                  },
+                  {
+                      "_id": "600a98fa7755b202be0c36c2",
+                      "value": "Biller",
+                      "key": "$orderby",
+                      "type": "constant"
+                  }
+              ]
+          }
+      ],
+      "__v": 1,
+      "status": "published",
+      "lastUpdated": "Fri Jan 22 2021 11:15:11 GMT+0000 (Coordinated Universal Time)",
+      "version": 1
+  }
+}

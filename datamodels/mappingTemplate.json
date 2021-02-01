@@ -1,0 +1,36 @@
+{
+  "adapterId": "bbbfc816-1558-4478-afe6-cf9593186899",
+  "apiDefinitionId": "4139d772-9c71-4fbe-9c1c-df4087be6fab",
+  "mappingId":"4139d772-9c71-4fbe-9c1c-df4087be6fac",
+  "sourceOperationId":"DeletePayee",
+  "targetAPI": [
+    {
+      "schemaId": "34f1f4d6-0b14-4922-ac76-fd765e6244c5",
+      "operationId": "DeletePayee",
+      "path": "",      
+        "headerParams": [
+          {
+            "key": "organization_id",
+            "type": "constant",
+            "value": "K001"
+          }
+        ],
+        "requestParams": [
+          {
+            "key": "PayeeId",
+            "type": "directMap",
+            "value": "sourceAPI.DeletePayee.requestParams.PayeeId"
+          }
+        ]
+      }    
+  ],
+  "sourceAPI": {
+    "category": "Banking",
+    "operationId": "DeletePayee",
+    "method": "DELETE",
+    "path": "Payee",
+    "responseParams":[],
+    "headerParams":[]
+    
+  }
+}

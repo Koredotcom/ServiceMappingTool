@@ -1,0 +1,27 @@
+{
+    "baseurl": "https://demodpd.kore.ai",
+     "standardObj":"smt-standard-objects",
+     "targetObj":"smt-adapter-definitions",
+     "mappingObj":"smt-mappings",
+     "db": {
+         "useCreds": false,
+         "dbname":"smt",       
+           "host": "bankingassistant-dev-mongo1.korebots.com",
+           "port": 27017,
+           "replEnabled": false,
+           "authEnabled": true,
+           "userName": "qaserver",           
+           "password": "M)nG!&*",
+           "authSource": "admin",
+           "sslEnabled": false,
+           "sslValidate": false,
+           "writeconcern": 1
+         
+       },
+       "redis":{
+           "port":6379,
+           "auth":"kore123",
+           "expiryTime":3600
+       }
+     
+ }

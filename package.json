@@ -1,0 +1,63 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "service mapping tool",
+  "main": "index.js",
+  "exports": {
+    "./features/*": "./src/features/*.js"
+  },
+  "imports": {
+    "#internal/*": "./src/internal/*.js"
+  },
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "keywords": [
+    "ES",
+    "MODULES",
+    "NODE",
+    "MODULES",
+    "JS"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "api-spec-converter": "^2.11.2",
+    "async": "^3.2.0",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "js-yaml": "^4.0.0",
+    "json-schema-merge-allof": "^0.7.0",
+    "lodash": "^4.17.20",
+    "log4j": "^1.0.0",
+    "log4js": "^6.3.0",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.8",
+    "mustache": "^4.1.0",
+    "nodemon": "^2.0.6",
+    "object-mapper": "^6.2.0",
+    "pluck": "0.0.4",
+    "redis": "^3.0.2",
+    "swagger-parser": "^10.0.2",
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "prettier": "^2.2.1"
+  }
+}
